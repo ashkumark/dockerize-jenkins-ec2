@@ -33,7 +33,7 @@ RUN chown -R jenkins:jenkins /chromedriver
 RUN mkdir /var/log/jenkins
 RUN chown -R  jenkins:jenkins /var/log/jenkins
  
-#USER jenkins
+USER ubuntu
   
 # Expose ports
 EXPOSE 5901
