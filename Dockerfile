@@ -2,7 +2,6 @@
 #FROM maven:3.8.2-openjdk-8
 
 FROM jenkins/jenkins:lts
-LABEL maintainer="ash"
 
 #WORKDIR /home/docker
 #COPY src /home/docker/src
@@ -28,10 +27,10 @@ RUN apt-get update && \
     wget -q --continue -P /chromedriver "http://chromedriver.storage.googleapis.com/$DRIVERVER/chromedriver_linux64.zip" && \
     unzip /chromedriver/chromedriver* -d /chromedriver
     
-RUN chown -R jenkins:jenkins /chromedriver
+RUN chown -R ubuntu:ubuntu /chromedriver
 
 RUN mkdir /var/log/jenkins
-RUN chown -R  jenkins:jenkins /var/log/jenkins
+RUN chown -R  ubuntu:ubuntu /var/log/jenkins
  
 USER ubuntu
   
