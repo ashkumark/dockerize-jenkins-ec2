@@ -27,12 +27,12 @@ RUN apt-get update && \
     wget -q --continue -P /chromedriver "http://chromedriver.storage.googleapis.com/$DRIVERVER/chromedriver_linux64.zip" && \
     unzip /chromedriver/chromedriver* -d /chromedriver
     
-RUN chown -R ubuntu:ubuntu /chromedriver
+RUN chown -R jenkins:jenkins /chromedriver
 
 RUN mkdir /var/log/jenkins
-RUN chown -R  ubuntu:ubuntu /var/log/jenkins
+RUN chown -R  jenkins:jenkins /var/log/jenkins
  
-USER ubuntu
+#USER ubuntu
   
 # Expose ports
 EXPOSE 5901
