@@ -18,7 +18,7 @@ pipeline {
         	agent {
                 docker {
                     image 'ashkumarkdocker/docker-e2e-automation'
-                    //reuseNode true
+                    reuseNode true // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely
                     args '-v $HOME/.m2:/root/.m2'
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
         	agent {
                 docker {
                     image 'ashkumarkdocker/docker-e2e-automation'
-                   // reuseNode true
+                    reuseNode true
                     args '-v $HOME/.m2:/root/.m2'
                 }
             }
