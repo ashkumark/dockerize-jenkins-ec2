@@ -1,5 +1,5 @@
 
-FROM maven:3.8.3-openjdk-8-slim
+FROM maven:3.8.3-openjdk-8
 
 #FROM jenkins/jenkins:lts
 #FROM jenkins/agent:latest
@@ -14,7 +14,7 @@ ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log"
 USER root
 
 RUN apt-get update && \
-    apt-get install -y sudo maven gnupg wget curl unzip --no-install-recommends && \
+    apt-get install -y sudo gnupg wget curl unzip --no-install-recommends && \
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list && \
     apt-get update -y && \
