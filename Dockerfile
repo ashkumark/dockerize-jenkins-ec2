@@ -1,12 +1,8 @@
 
-FROM maven:3.8.2-openjdk-8
+FROM maven:3.8.3-openjdk-8-slim
 
 #FROM jenkins/jenkins:lts
 #FROM jenkins/agent:latest
-
-#WORKDIR /home/docker
-#COPY src /home/docker/src
-#COPY pom.xml /home/docker
 
 WORKDIR /home/docker-jenkins-test
 COPY src /home/docker-jenkins-test
