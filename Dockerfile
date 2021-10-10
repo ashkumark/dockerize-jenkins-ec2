@@ -1,15 +1,9 @@
 
 FROM maven:3.8.3-openjdk-8
 
-#FROM jenkins/jenkins:lts
-#FROM jenkins/agent:latest
-
 WORKDIR /home/docker-jenkins-test
 COPY src /home/docker-jenkins-test
 COPY pom.xml /home/docker-jenkins-test
-
-ENV JAVA_OPTS="-Xmx8192m"
-ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log"
 
 USER root
 
@@ -23,13 +17,6 @@ RUN apt-get update && \
     DRIVERVER=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROMEVER") && \
     wget -q --continue -P /chromedriver "http://chromedriver.storage.googleapis.com/$DRIVERVER/chromedriver_linux64.zip" && \
     unzip /chromedriver/chromedriver* -d /chromedriver
-    
-#RUN chown -R jenkins:jenkins /chromedriver
-
-#RUN mkdir /var/log/jenkins
-#RUN chown -R  jenkins:jenkins /var/log/jenkins
- 
-#USER jenkins
   
 # Expose ports
 EXPOSE 5901
