@@ -1,7 +1,8 @@
 
 #FROM maven:3.8.2-openjdk-8
 
-FROM jenkins/jenkins:lts
+#FROM jenkins/jenkins:lts
+FROM jenkins/agent
 
 #WORKDIR /home/docker
 #COPY src /home/docker/src
